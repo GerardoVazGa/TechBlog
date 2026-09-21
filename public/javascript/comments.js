@@ -158,7 +158,7 @@ class CommentsSection {
         actions.classList.add('comment-actions')
 
         if(!comment.deleted_at){
-            const likes = likes.comment ? likes.comment : 0
+            const likes = comment.likes > 0 ? comment.likes : '0'
             const likeBtn = this.createButton('👍', likes, 'like')
             likeBtn.dataset.countLikes = comment.likes
 
