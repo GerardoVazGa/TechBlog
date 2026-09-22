@@ -1,44 +1,52 @@
 <footer class="blog-footer">
     <div class="footer-container">
-        <!-- Sección 1 -->
-        <div class="footer-section">
-            <h3>Sobre el Blog</h3>
-            <p>Un espacio dedicado a compartir conocimientos, experiencias y reflexiones sobre diversos temas de
-                interés.</p>
+        <div class="footer-section footer-brand-section">
+            <div class="footer-brand">
+                <i class="fa-solid fa-laptop-code"></i>
+                <span>TechBlog</span>
+            </div>
+            <p>Ideas, tutoriales y reflexiones sobre tecnología, desarrollo y creatividad para seguir aprendiendo cada día.</p>
         </div>
 
-        <!-- Sección 2 -->
         <div class="footer-section">
-            <h3>Enlaces Rápidos</h3>
+            <h3>Navegación</h3>
             <ul class="footer-links">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Categorías</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="mailto:hello@techblog.dev">Contacto</a></li>
             </ul>
         </div>
 
-        <!-- Sección 3 -->
+        <div class="footer-section">
+            <h3>Categorías</h3>
+            <ul class="footer-links">
+                <% if (categories && categories.length) { %>
+                    <% categories.slice(0, 4).forEach(category => { %>
+                        <li><a href="/blog/category/<%= category %>"><%= category %></a></li>
+                    <% }) %>
+                <% } else { %>
+                    <li><a href="/blog">Tecnología</a></li>
+                    <li><a href="/blog">Desarrollo</a></li>
+                    <li><a href="/blog">Diseño</a></li>
+                <% } %>
+            </ul>
+        </div>
+
         <div class="footer-section footer-contact">
             <h3>Contacto</h3>
             <address>
-                <p><i class="fas fa-envelope"></i> info@tublog.com</p>
-                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:hello@techblog.dev">gerardo.vaz.galindo@gmail.com</a></p>
+                <p><i class="fa-solid fa-phone"></i> +52 449 142 7022</p>
             </address>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/GerardoVazGa" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="www.linkedin.com/in/gerardo-vazquez-galindo-099765305" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
 
-    <!-- Copyright -->
     <div class="copyright">
-        <p>&copy; 2023 Tu Blog. Todos los derechos reservados.</p>
+        <p>&copy; <%= new Date().getFullYear() %> TechBlog. Todos los derechos reservados.</p>
     </div>
 </footer>
-</body>
-
-</html>
