@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <a href="/about" class="<%= current === 'about' ? 'active' : '' %>">About</a>
-                    <a href="/contact">Contact</a>
+                    <a href="/contact" class="<%= current === 'contact' ? 'active' : '' %>">Contact</a>
 
                     <div class="auth-buttons">
                         <% if(!isAdmin) { %>
@@ -75,7 +75,7 @@
             </div>
 
             <div class="nav-item"><a href="/about">About</a></div>
-            <div class="nav-item"><a href="/contact">Contact</a></div>
+            <div class="nav-item"><a href="/contact" class="<%= current === 'contact' ? 'active' : '' %>">Contact</a></div>
             <div class="nav-item auth-buttons mobile-log-buttons">
                 <% if(!isAdmin) { %>
                     <a class="loginBtn">Login</a>
